@@ -17,7 +17,7 @@ const ViewPaginatedJobs = async (req, res) => {
         const page = parseInt(req.params.page) || 1;
         
   
-        const limit = 4;
+        const limit = 10;
         
 
         const result = await JobPost.paginate(page, limit);
