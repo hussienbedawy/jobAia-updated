@@ -11,6 +11,6 @@ router.get('/JobPosting', ViewJobs);
 router.post('/JobPosting', upload.single("Document") , CreateJob);
 
 // router.get('')
-router.get('/JobPosting/paginated/:page', ViewPaginatedJobs);
+router.get('/JobPosting/paginated', ViewPaginatedJobs);
 
 module.exports = router;
