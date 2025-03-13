@@ -8,7 +8,7 @@ const upload = multer({ storage: storage });
 
 router.get('/JobPosting', ViewJobs);
 
-router.post('/JobPosting/:id', upload.single("Document") , CreateJob);
+router.post('/JobPosting', upload.single("Document") , CreateJob);
 
 // router.get('')
 router.get('/JobPosting/paginated/:page', ViewPaginatedJobs);
