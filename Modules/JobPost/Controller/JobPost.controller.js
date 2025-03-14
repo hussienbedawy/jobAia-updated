@@ -17,11 +17,11 @@ const ViewPaginatedJobs = async (req, res) => {
         const page = parseInt(req.query.page) || 1;
         
   
-        const limit = 4;
+        const limit = 10;
         
 
         const result = await JobPost.paginate(page, limit);
-        if(!result.totalPages) {
+        if(page === result.totalPages) {
             return res.status(200).json({
             success: true,
             count: result.jobs.length,
@@ -36,7 +36,7 @@ const ViewPaginatedJobs = async (req, res) => {
         });
     }
     else{
-        return res.status(404).send({success:false,data:"there is know such a page" })
+        return res.status(404).send({success:false,data:"There is no more pages" })
     }
     
         
